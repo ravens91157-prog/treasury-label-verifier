@@ -27,9 +27,12 @@ function App() {
 
 setText(extractedText);
 
-const checks = [
-  {
-   const upperText = text.toUpperCase();
+const upperText = extractedText.toUpperCase();
+
+
+
+
+
 
 const hasGovernmentWarning =
   upperText.includes("GOVERNMENT WARNING") ||
@@ -43,7 +46,25 @@ const hasAlcoholContent =
 const hasNetContents =
   upperText.includes("ML") ||
   upperText.includes("750");
+
+const checks = [
+
+  {
+    label: "Government Warning",
+    passed: hasGovernmentWarning
+  },
+  {
+    label: "Alcohol Content",
+    passed: hasAlcoholContent
+  },
+  {
+    label: "Net Contents",
+    passed: hasNetContents
+  }
 ];
+   
+
+
 
 setResults(checks);
 
