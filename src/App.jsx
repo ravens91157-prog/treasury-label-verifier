@@ -29,25 +29,20 @@ setText(extractedText);
 
 const checks = [
   {
-    name: "Government Warning",
-    status: extractedText.includes("GOVERNMENT WARNING")
-      ? "PASS"
-      : "FAIL",
-  },
-  {
-    name: "Alcohol Content",
-    status: extractedText.includes("%")
-      ? "PASS"
-      : "FAIL",
-  },
-  {
-    name: "Net Contents",
-    status:
-      extractedText.includes("mL") ||
-      extractedText.includes("ML")
-        ? "PASS"
-        : "FAIL",
-  },
+   const upperText = text.toUpperCase();
+
+const hasGovernmentWarning =
+  upperText.includes("GOVERNMENT WARNING") ||
+  upperText.includes("SURGEON GENERAL");
+
+const hasAlcoholContent =
+  upperText.includes("ALC") ||
+  upperText.includes("BY VOL") ||
+  upperText.includes("%");
+
+const hasNetContents =
+  upperText.includes("ML") ||
+  upperText.includes("750");
 ];
 
 setResults(checks);
