@@ -89,9 +89,9 @@ setLoading(false);
 
 <ul>
   {results.map((item, index) => (
-    <li key={index}>
-      {item.name}: {item.status}
-    </li>
+  <li key={index}>
+  {item.label}: {item.passed ? "PASS" : "FAIL"}
+</li> 
   ))}
 </ul>
       {loading && <p>Reading label...</p>}
